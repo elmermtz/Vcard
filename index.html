@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Digital Business Card</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* CARD CONTAINER CON ANIMACIÓN DE 2 SEGUNDOS */
+        .card-container {
+            background-color: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 360px;
+            text-align: center;
+            padding: 35px 24px;
+            box-sizing: border-box;
+            animation: introZoom 3s ease-out forwards;
+            opacity: 0; 
+        }
+
+        @keyframes introZoom {
+            0% {
+                opacity: 0;
+                transform: scale(0.80);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* CONTROL TOTAL DEL RECORTE REDONDO */
+        .logo-profile {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;       /* Hace el contenedor un círculo perfecto */
+            object-fit: cover;        /* Centra y recorta la foto sin deformarla */
+            object-position: center;  /* Asegura que el recorte sea desde el centro */
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            margin: 0 0 6px 0;
+            color: #0f172a;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        p.tagline {
+            margin: 0 0 4px 0;
+            color: #2563eb;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        p.company {
+            margin: 0 0 28px 0;
+            color: #64748b;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .btn-base {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-sizing: border-box;
+            width: 100%;
+            -webkit-tap-highlight-color: transparent;
+            transition: background-color 0.1s, transform 0.1s, border-color 0.1s;
+        }
+        .btn-main {
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 16px;
+            border-radius: 16px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+            font-size: 16px;
+            border: none;
+        }
+        .btn-main:active {
+            transform: scale(0.97);
+            background-color: #1d4ed8;
+        }
+        .links-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .btn-secondary {
+            background-color: #f8fafc;
+            color: #334155;
+            padding: 15px;
+            border-radius: 14px;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+            font-size: 15px;
+        }
+        .btn-secondary:active {
+            background-color: #f1f5f9;
+            transform: scale(0.99);
+            border-color: #cbd5e1;
+        }
+        .icon {
+            margin-right: 10px;
+            font-size: 19px;
+        }
+        @media (max-width: 400px) {
+            body {
+                background-color: #ffffff;
+            }
+            .card-container {
+                box-shadow: none;
+                padding: 20px 16px;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <!-- Vinculado directo para que tome la foto que subas a GitHub -->
+        <img src="foto.jpg" alt="Profile Picture" class="logo-profile">
+        
+        <h2>Elmer Martinez</h2>
+        <p class="tagline">Manager</p>
+        <p class="company">Kids of the Northwest LLC.</p>
+        
+        <a href="https://docs.google.com/uc?export=download&id=1Zvo2WlclvnZ0wBmgScnD7dgvl9txE4d6" 
+           type="text/vcard" 
+           download="Elmer_Martinez.vcf" 
+           class="btn-base btn-main">
+            <span class="icon">📥</span> Save Contact
+        </a>
+        
+        <div class="links-section">
+            <a href="tel:+19713036325" class="btn-base btn-secondary">
+                <span class="icon">📞</span> Call Now
+            </a>
+            
+            <a href="https://wa.me/19713036325" class="btn-base btn-secondary" target="_blank">
+                <span class="icon">💬</span> WhatsApp Chat
+            </a>
+            
+            <a href="https://Repairtico.com" class="btn-base btn-secondary" target="_blank">
+                <span class="icon">🌐</span> Visit Website
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
